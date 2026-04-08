@@ -1,11 +1,49 @@
 export default function robots() {
   return {
     rules: [
+      // 🔍 Google (main SEO bot)
+      {
+        userAgent: "Googlebot",
+        allow: "/",
+        disallow: [
+          "/admin",
+          "/dashboard",
+          "/api",
+          "/private",
+          "/*?*", // block query params (duplicate URLs)
+        ],
+      },
+
+      // 🤖 Bing bot
+      {
+        userAgent: "Bingbot",
+        allow: "/",
+        disallow: ["/admin", "/api", "/*?*"],
+      },
+
+      // 🚫 Block aggressive / low-value bots
+      {
+        userAgent: [
+          "AhrefsBot",
+          "SemrushBot",
+          "MJ12bot",
+          "DotBot",
+        ],
+        disallow: "/",
+      },
+
+      // 🌍 Default rule for all other bots
       {
         userAgent: "*",
         allow: "/",
+        disallow: [
+          "/admin",
+          "/api",
+          "/private",
+        ],
       },
     ],
+
     sitemap: "https://ahsans-story.netlify.app/sitemap.xml",
   };
 }
