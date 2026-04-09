@@ -1,4 +1,3 @@
-
 import SEOContent from "../components/SEOContent";
 <link rel="icon" type="image/svg" sizes="16x16" href="/favicon_16.svg"></link>
 
@@ -17,20 +16,20 @@ export default async function Home() {
     stories?.filter((s: any) => s.status === "published") || [];
 
   return (
-    <main className="min-h-screen bg-gray-100 flex flex-col md:flex-row">
+    <main className="min-h-screen bg-[#f6f1e7] flex flex-col md:flex-row">
 
       {/* SIDEBAR */}
-      <aside className="w-full md:w-64 bg-white border-b md:border-r p-4 md:p-6 flex md:flex-col justify-between md:min-h-screen">
+      <aside className="w-full md:w-64 bg-[#f3ede3] border-b md:border-r p-4 md:p-6 flex md:flex-col justify-between md:min-h-screen">
 
         {/* TOP SECTION */}
         <div>
 
           {/* LOGO */}
           <div className="mb-6 md:mb-8">
-            <h1 className="text-lg md:text-xl font-bold tracking-tight">
+            <h1 className="text-lg md:text-xl font-bold tracking-tight text-[#3e2f1c]">
               Ahsan's E-Book
             </h1>
-            <p className="text-xs text-gray-500 mt-1">
+            <p className="text-xs text-[#7a6a55] mt-1">
               Bangla Story Library
             </p>
           </div>
@@ -38,20 +37,20 @@ export default async function Home() {
           {/* NAV */}
           <nav className="flex md:flex-col gap-2 md:space-y-3 text-sm overflow-x-auto">
 
-            <a className="whitespace-nowrap flex items-center gap-2 px-3 py-2 rounded-lg bg-black text-white">
+            <a className="whitespace-nowrap flex items-center gap-2 px-3 py-2 rounded-lg bg-[#3e2f1c] text-white shadow-sm">
               Home
             </a>
 
             <a
               href="/about"
-              className="whitespace-nowrap flex items-center gap-2 px-3 py-2 rounded-lg text-gray-600 hover:bg-gray-100"
+              className="whitespace-nowrap flex items-center gap-2 px-3 py-2 rounded-lg text-[#5c4d3a] hover:bg-[#e8dfcf] transition"
             >
               About
             </a>
 
             <a
               href="/help"
-              className="whitespace-nowrap flex items-center gap-2 px-3 py-2 rounded-lg text-gray-600 hover:bg-gray-100"
+              className="whitespace-nowrap flex items-center gap-2 px-3 py-2 rounded-lg text-[#5c4d3a] hover:bg-[#e8dfcf] transition"
             >
               Help
             </a>
@@ -61,29 +60,29 @@ export default async function Home() {
         </div>
 
         {/* BOTTOM SECTION */}
-        <div className="hidden md:block border-t pt-6">
+        <div className="hidden md:block border-t border-[#e5dccb] pt-6">
 
           <div className="flex items-center gap-3 mb-4">
             <img
               src="/author.webp"
-              className="w-10 h-10 rounded-full"
+              className="w-10 h-10 rounded-full shadow-sm"
             />
             <div>
-              <p className="text-sm font-semibold">
+              <p className="text-sm font-semibold text-[#3e2f1c]">
                 Ahsan Jannat
               </p>
-              <p className="text-xs text-gray-500">
+              <p className="text-xs text-[#7a6a55]">
                 Story Writer
               </p>
             </div>
           </div>
 
-          <div className="text-xs text-gray-500 space-y-1 mb-4">
+          <div className="text-xs text-[#7a6a55] space-y-1 mb-4">
             <a href="/about" className="block hover:text-black">About</a>
             <a href="/help" className="block hover:text-black">Help</a>
           </div>
 
-          <p className="text-[11px] text-gray-400">
+          <p className="text-[11px] text-[#a08f78]">
             © {new Date().getFullYear()} Ahsan's Story
           </p>
 
@@ -100,17 +99,17 @@ export default async function Home() {
           <input
             type="text"
             placeholder="Search books..."
-            className="w-full sm:max-w-md border p-3 rounded-xl bg-white"
+            className="w-full sm:max-w-md px-4 py-3 rounded-xl bg-white border border-[#e5dccb] shadow-sm focus:outline-none focus:ring-2 focus:ring-[#d6c7a8]"
           />
 
         </div>
 
         {/* TABS */}
         <div className="flex gap-3 mb-6 md:mb-8 text-sm overflow-x-auto">
-          <button className="whitespace-nowrap bg-black text-white px-4 py-1 rounded-full">
+          <button className="whitespace-nowrap bg-[#3e2f1c] text-white px-4 py-1 rounded-full shadow-sm">
             Popular
           </button>
-          <button className="whitespace-nowrap bg-gray-200 px-4 py-1 rounded-full">
+          <button className="whitespace-nowrap bg-[#e8dfcf] px-4 py-1 rounded-full text-[#5c4d3a]">
             New
           </button>
         </div>
@@ -129,12 +128,12 @@ export default async function Home() {
                   href={`/stories/${story.slug}`}
                   className="group"
                 >
-                  <div className="bg-white p-3 rounded-2xl shadow hover:shadow-xl transition">
+                  <div className="bg-white p-3 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition duration-300">
 
-                    <div className="aspect-[3/4] overflow-hidden rounded-lg">
+                    <div className="aspect-[3/4] overflow-hidden rounded-xl">
                       <img
                         src={story.cover_url}
-                        className="w-full h-full object-cover group-hover:scale-105 transition"
+                        className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
                       />
                     </div>
 
@@ -155,12 +154,16 @@ export default async function Home() {
 
                         return (
                           <>
-                            <h3 className="text-sm font-semibold line-clamp-2">
+                            <h3 className="text-sm font-semibold text-[#3e2f1c] line-clamp-2">
                               {title}
                             </h3>
 
-                            <p className="text-xs text-gray-500 mt-1 line-clamp-2">
+                            <p className="text-xs text-[#7a6a55] mt-2 line-clamp-2">
                               {desc}
+                            </p>
+
+                            <p className="text-[11px] text-[#a08f78] mt-2">
+                              Read Story →
                             </p>
                           </>
                         );
@@ -179,22 +182,22 @@ export default async function Home() {
           {/* AUTHOR CARD */}
           <div className="w-full lg:w-72 hidden lg:block">
 
-            <div className="bg-white p-6 rounded-2xl shadow">
+            <div className="bg-white p-6 rounded-2xl shadow-sm border border-[#e5dccb]">
 
-              <h3 className="text-sm font-semibold mb-4">
+              <h3 className="text-sm font-semibold mb-4 text-[#3e2f1c]">
                 Author
               </h3>
 
               <div className="flex items-center gap-3 mb-4">
                 <img
                   src="/author.webp"
-                  className="w-12 h-12 rounded-full"
+                  className="w-12 h-12 rounded-full shadow-sm"
                 />
                 <div>
-                  <p className="font-semibold">
+                  <p className="font-semibold text-[#3e2f1c]">
                     Ahsan Jannat
                   </p>
-                  <p className="text-xs text-gray-500">
+                  <p className="text-xs text-[#7a6a55]">
                     Bangla Story Writer
                   </p>
                 </div>
@@ -202,7 +205,7 @@ export default async function Home() {
 
               <a
                 href="/about"
-                className="block text-center bg-black text-white py-2 rounded-lg"
+                className="block text-center bg-[#3e2f1c] text-white py-2 rounded-lg hover:opacity-90 transition"
               >
                 View Profile
               </a>
@@ -223,3 +226,4 @@ export default async function Home() {
     </main>
   );
 }
+
